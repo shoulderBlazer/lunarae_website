@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - LunaRae</title>
+    <meta name="description" content="Privacy Policy for LunaRae - Learn how we protect your data and privacy.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="app_icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luna: {
+                            gradientStart: '#F6F4FF',
+                            gradientEnd: '#EAE4FF',
+                            primary: '#B9A8E5',
+                            secondary: '#FFD6C9',
+                            card: '#FFFFFF',
+                            textPrimary: '#2A2A2A',
+                            textSecondary: '#6B6B6B',
+                            inputBg: '#FFFBF5',
+                        }
+                    },
+                    fontFamily: {
+                        'quicksand': ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(180deg, #F6F4FF 0%, #EAE4FF 100%);
+        }
+        .content-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-luna-textPrimary">
+    <!-- Stars Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="star w-1 h-1" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 15%; left: 80%; animation-delay: 0.5s;"></div>
+        <div class="star w-1 h-1" style="top: 30%; left: 10%; animation-delay: 1s;"></div>
+        <div class="star w-2 h-2" style="top: 25%; left: 90%; animation-delay: 1.5s;"></div>
+        <div class="star w-1 h-1" style="top: 50%; left: 5%; animation-delay: 2s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 60%; left: 95%; animation-delay: 2.5s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-luna-gradientStart/90 backdrop-blur-md border-b border-luna-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="app_icon.png" alt="LunaRae" class="w-10 h-10 rounded-xl">
+                    <span class="text-xl font-bold text-luna-primary">LunaRae</span>
+                </a>
+                <div class="flex items-center gap-6">
+                    <a href="privacy.html" class="text-sm text-luna-textPrimary font-semibold">Privacy</a>
+                    <a href="terms.html" class="text-sm text-luna-textSecondary hover:text-luna-textPrimary transition">Terms</a>
+                    <a href="index.html#download" class="bg-gradient-to-r from-luna-primary to-luna-primary/80 px-4 py-2 rounded-full text-sm font-semibold text-white hover:opacity-90 transition">Download</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="content-card rounded-3xl p-8 sm:p-12 bg-white/90 border border-luna-primary/20">
+                <h1 class="text-3xl sm:text-4xl font-bold text-center mb-2">Privacy Policy</h1>
+                <p class="text-center text-luna-primary mb-8">for LunaRae</p>
+                
+                <div class="h-px bg-gradient-to-r from-transparent via-luna-primary/50 to-transparent mb-8"></div>
+                
+                <p class="text-luna-textSecondary text-sm italic mb-8">Last updated: December 2025</p>
+
+                <div class="space-y-8 text-luna-textSecondary leading-relaxed">
+                    <p>
+                        LunaRae ("we," "our," or "us") respects your privacy. This Privacy Policy explains how your information is collected, used, and protected when you use the LunaRae mobile application ("the App").
+                    </p>
+                    <p>
+                        By using LunaRae, you agree to the collection and use of information in accordance with this policy.
+                    </p>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">1. Information We Collect</h2>
+                        
+                        <h3 class="font-semibold text-luna-textPrimary mb-2">a. User-Submitted Content</h3>
+                        <p class="mb-4">When you use LunaRae to generate a story:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>The text you enter (story prompts) is sent securely to our AI provider (OpenAI) in order to generate your bedtime story.</li>
+                        </ul>
+                        <p class="mb-2">You should not include personal information such as:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Real names</li>
+                            <li>Home addresses</li>
+                            <li>Email addresses</li>
+                            <li>Phone numbers</li>
+                            <li>Any sensitive personal data</li>
+                        </ul>
+                        <p class="mb-4">We do not require accounts and do not collect personal identity data.</p>
+
+                        <h3 class="font-semibold text-luna-textPrimary mb-2">b. Automatically Collected Information</h3>
+                        <p class="mb-2">We may collect non-personal usage data such as:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>App usage events</li>
+                            <li>Device type and operating system</li>
+                            <li>Crash reports</li>
+                            <li>Performance metrics</li>
+                        </ul>
+                        <p class="mb-4">This data is used only to improve app performance and reliability.</p>
+
+                        <h3 class="font-semibold text-luna-textPrimary mb-2">c. Advertising Data</h3>
+                        <p class="mb-2">The free version of LunaRae displays ads through Google AdMob. Ad providers may collect:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Device identifiers</li>
+                            <li>Approximate location (non-precise)</li>
+                            <li>Ad interaction data</li>
+                        </ul>
+                        <p>LunaRae does not control how third-party ad platforms use their data. Please refer to Google's Privacy Policy for details.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">2. How We Use Your Information</h2>
+                        <p class="mb-2">We use collected data only to:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Generate bedtime stories using AI</li>
+                            <li>Improve app functionality and performance</li>
+                            <li>Display advertisements in the free version</li>
+                            <li>Monitor app stability and crash behavior</li>
+                        </ul>
+                        <p class="font-semibold">We do not sell user data.</p>
+                        <p class="font-semibold">We do not track personal identity.</p>
+                        <p class="font-semibold">We do not build user profiles.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">3. Use of OpenAI Technology</h2>
+                        <p class="mb-2">LunaRae uses OpenAI technology to generate its bedtime stories. This means:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>The story prompt you enter is sent securely to OpenAI's servers for processing.</li>
+                            <li>OpenAI processes the content only to generate the story response.</li>
+                            <li>LunaRae does not train its own AI models using your data.</li>
+                            <li>LunaRae does not sell or reuse your prompts for AI training purposes.</li>
+                            <li>LunaRae is not affiliated with, endorsed by, or partnered with OpenAI.</li>
+                        </ul>
+                        <p>You can review OpenAI's Privacy Policy here: <a href="https://www.openai.com/privacy" class="text-luna-primary hover:underline" target="_blank">https://www.openai.com/privacy</a></p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">4. Children's Privacy</h2>
+                        <p>LunaRae is designed with child-friendly content in mind. However:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>The app does not knowingly collect personal information from children.</li>
+                            <li>Parents and guardians are encouraged to supervise use.</li>
+                            <li>Users should never enter real personal details into story prompts.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">5. Data Storage & Security</h2>
+                        <p>We take reasonable technical measures to protect user data. Story prompts are processed temporarily to generate results and are not permanently stored by LunaRae.</p>
+                        <p class="mt-2">However, no digital system is 100% secure.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">6. Your Rights Under GDPR</h2>
+                        <p class="mb-2">If you are located in the European Economic Area (EEA), you have the right to:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Request deletion of data</li>
+                            <li>Request access to stored data</li>
+                            <li>Request correction of inaccurate data</li>
+                        </ul>
+                        <p>Because we do not store personal identity information, most data is anonymized and cannot be linked to individuals.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">7. Third-Party Services</h2>
+                        <p class="mb-2">LunaRae uses the following third-party services:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>OpenAI (story generation)</li>
+                            <li>Google AdMob (advertising)</li>
+                            <li>Firebase Analytics & Crash Reporting (performance monitoring)</li>
+                        </ul>
+                        <p>Each provider has its own privacy policy.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">8. Changes to This Privacy Policy</h2>
+                        <p>We may update this Privacy Policy occasionally. Any updates will be reflected inside the app.</p>
+                        <p class="mt-2">Continued use of LunaRae after updates indicates acceptance of the revised policy.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">9. Contact Information</h2>
+                        <p>If you have questions about this Privacy Policy, you may contact:</p>
+                        <p class="mt-2 text-luna-primary">📧 support@lunarae.app</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-luna-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="app_icon.png" alt="LunaRae" class="w-8 h-8 rounded-lg">
+                    <span class="font-bold text-luna-primary">LunaRae</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-luna-textSecondary">
+                    <a href="privacy.html" class="text-luna-textPrimary font-semibold">Privacy Policy</a>
+                    <span>·</span>
+                    <a href="terms.html" class="hover:text-luna-textPrimary transition">Terms & Conditions</a>
+                </div>
+                <p class="text-sm text-luna-textSecondary">© 2025 LunaRae. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

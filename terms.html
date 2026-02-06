@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - LunaRae</title>
+    <meta name="description" content="Terms and Conditions for LunaRae - Read our terms of service.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="app_icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luna: {
+                            gradientStart: '#F6F4FF',
+                            gradientEnd: '#EAE4FF',
+                            primary: '#B9A8E5',
+                            secondary: '#FFD6C9',
+                            card: '#FFFFFF',
+                            textPrimary: '#2A2A2A',
+                            textSecondary: '#6B6B6B',
+                            inputBg: '#FFFBF5',
+                        }
+                    },
+                    fontFamily: {
+                        'quicksand': ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(180deg, #F6F4FF 0%, #EAE4FF 100%);
+        }
+        .content-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-luna-textPrimary">
+    <!-- Stars Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="star w-1 h-1" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 15%; left: 80%; animation-delay: 0.5s;"></div>
+        <div class="star w-1 h-1" style="top: 30%; left: 10%; animation-delay: 1s;"></div>
+        <div class="star w-2 h-2" style="top: 25%; left: 90%; animation-delay: 1.5s;"></div>
+        <div class="star w-1 h-1" style="top: 50%; left: 5%; animation-delay: 2s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 60%; left: 95%; animation-delay: 2.5s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-luna-gradientStart/90 backdrop-blur-md border-b border-luna-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="app_icon.png" alt="LunaRae" class="w-10 h-10 rounded-xl">
+                    <span class="text-xl font-bold text-luna-primary">LunaRae</span>
+                </a>
+                <div class="flex items-center gap-6">
+                    <a href="privacy.html" class="text-sm text-luna-textSecondary hover:text-luna-textPrimary transition">Privacy</a>
+                    <a href="terms.html" class="text-sm text-luna-textPrimary font-semibold">Terms</a>
+                    <a href="index.html#download" class="bg-gradient-to-r from-luna-primary to-luna-primary/80 px-4 py-2 rounded-full text-sm font-semibold text-luna-textPrimary hover:opacity-90 transition">Download</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="content-card rounded-3xl p-8 sm:p-12 bg-white/90 border border-luna-primary/20">
+                <h1 class="text-3xl sm:text-4xl font-bold text-center mb-2">Terms & Conditions</h1>
+                <p class="text-center text-luna-primary mb-8">for LunaRae</p>
+                
+                <div class="h-px bg-gradient-to-r from-transparent via-luna-primary/50 to-transparent mb-8"></div>
+                
+                <p class="text-luna-textSecondary text-sm italic mb-8">Last updated: December 2025</p>
+
+                <div class="space-y-8 text-luna-textSecondary leading-relaxed">
+                    <p>
+                        These Terms & Conditions govern your use of the LunaRae mobile application. By downloading, accessing, or using the app, you agree to be bound by these terms.
+                    </p>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">1. About the App</h2>
+                        <p class="mb-2">LunaRae is a bedtime story generator that creates gentle, positive stories using artificial intelligence. The app is intended for entertainment purposes only.</p>
+                        <p class="mb-2">All stories are:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Fictional</li>
+                            <li>AI-generated</li>
+                            <li>Not guaranteed to be factually accurate</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">2. Use of the App</h2>
+                        <p class="mb-2">You agree to use LunaRae responsibly and only for its intended purpose.</p>
+                        <p class="mb-2">You must not:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Use the app for harmful, abusive, or illegal purposes</li>
+                            <li>Attempt to interfere with or disrupt the app's services</li>
+                            <li>Attempt to reverse engineer, copy, or exploit the app</li>
+                        </ul>
+                        <p>We reserve the right to suspend or restrict access if misuse is detected.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">3. Advertisements</h2>
+                        <p>The free version of LunaRae contains advertisements provided by third-party ad networks such as Google AdMob.</p>
+                        <p class="mt-2">We do not control the content of advertisements and are not responsible for any third-party products or services promoted within the app.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">4. AI-Generated Content</h2>
+                        <p class="mb-2">LunaRae uses artificial intelligence to generate stories:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>All story outputs are automatically generated</li>
+                            <li>No guarantee is made regarding accuracy, interpretation, or educational value</li>
+                            <li>LunaRae is not responsible for how stories are interpreted or used by users</li>
+                        </ul>
+                        <p>Parents and guardians are encouraged to supervise children while using the app.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">5. Use of OpenAI Technology</h2>
+                        <p>LunaRae uses OpenAI technology to generate its stories.</p>
+                        <p class="mt-2">LunaRae is not affiliated with, endorsed by, partnered with, or sponsored by OpenAI. All AI content is generated automatically through licensed API usage.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">6. Service Availability</h2>
+                        <p class="mb-2">We aim to keep LunaRae available at all times, but we do not guarantee:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Uninterrupted service</li>
+                            <li>Error-free operation</li>
+                            <li>Continuous availability of AI generation services</li>
+                        </ul>
+                        <p>Access may be suspended temporarily for maintenance, updates, or technical issues.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">7. Limitation of Liability</h2>
+                        <p class="mb-2">To the maximum extent permitted by law:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>LunaRae is provided "as is"</li>
+                            <li>We are not liable for any direct or indirect damages arising from use of the app</li>
+                            <li>We are not responsible for lost data, generated content, or service interruption</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">8. Intellectual Property</h2>
+                        <p class="mb-2">All app branding, layout, and interface design belong to LunaRae.</p>
+                        <p class="mb-2">Users may:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-1">
+                            <li>Read and enjoy generated stories</li>
+                            <li>Share stories for personal, non-commercial use</li>
+                        </ul>
+                        <p class="mb-2">Users may not:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Resell generated content</li>
+                            <li>Use generated stories for commercial purposes without permission</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">9. Children's Use</h2>
+                        <p>LunaRae is designed to produce child-friendly content but is intended to be used with parental guidance. Parents and guardians are responsible for monitoring children's usage.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">10. Changes to These Terms</h2>
+                        <p>We may update these Terms & Conditions at any time. Continued use of the app after updates means you accept the new terms.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold text-luna-primary mb-4">11. Contact Information</h2>
+                        <p>For any questions regarding these Terms & Conditions, contact:</p>
+                        <p class="mt-2 text-luna-primary">📧 support@lunarae.app</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-luna-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="app_icon.png" alt="LunaRae" class="w-8 h-8 rounded-lg">
+                    <span class="font-bold text-luna-primary">LunaRae</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-luna-textSecondary">
+                    <a href="privacy.html" class="hover:text-luna-textPrimary transition">Privacy Policy</a>
+                    <span>·</span>
+                    <a href="terms.html" class="text-luna-textPrimary font-semibold">Terms & Conditions</a>
+                </div>
+                <p class="text-sm text-luna-textSecondary">© 2025 LunaRae. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
