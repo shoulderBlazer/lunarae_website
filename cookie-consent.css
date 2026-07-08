@@ -1,0 +1,116 @@
+/* Cookie Consent Banner Styles */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(246, 244, 255, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(185, 168, 229, 0.3);
+    box-shadow: 0 -4px 20px rgba(185, 168, 229, 0.2);
+    padding: 24px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cookie-consent-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-consent-banner .cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .cookie-consent-banner .cookie-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+}
+
+.cookie-consent-banner .cookie-text {
+    flex: 1;
+}
+
+.cookie-consent-banner .cookie-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #B9A8E5;
+    margin-bottom: 8px;
+}
+
+.cookie-consent-banner .cookie-message {
+    font-size: 0.95rem;
+    color: #6B6B6B;
+    line-height: 1.6;
+}
+
+.cookie-consent-banner .cookie-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .cookie-consent-banner .cookie-buttons {
+        flex-direction: column;
+        min-width: 200px;
+    }
+}
+
+.cookie-consent-banner .cookie-btn {
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    white-space: nowrap;
+}
+
+.cookie-consent-banner .cookie-btn-accept {
+    background: linear-gradient(135deg, #B9A8E5 0%, #A891D8 100%);
+    color: white;
+}
+
+.cookie-consent-banner .cookie-btn-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 168, 229, 0.4);
+}
+
+.cookie-consent-banner .cookie-btn-reject {
+    background: rgba(185, 168, 229, 0.1);
+    color: #B9A8E5;
+    border: 1px solid rgba(185, 168, 229, 0.3);
+}
+
+.cookie-consent-banner .cookie-btn-reject:hover {
+    background: rgba(185, 168, 229, 0.2);
+}
+
+/* Overlay for modal when opened from footer */
+.cookie-consent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.cookie-consent-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}

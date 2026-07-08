@@ -1,22 +1,6 @@
 // GA4 Configuration
 const GA4_MEASUREMENT_ID = 'G-Z8S01MQ0YJ';
 
-// Initialize GA4
-(function() {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
-    document.head.appendChild(script);
-    
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-        dataLayer.push(arguments);
-    };
-    
-    gtag('js', new Date());
-    gtag('config', GA4_MEASUREMENT_ID);
-})();
-
 // Track custom events with duplicate prevention
 const trackedClicks = new Set();
 
@@ -41,7 +25,13 @@ function trackEvent(eventName, parameters = {}) {
         ...parameters
     };
     
-    gtag('event', eventName, defaultParams);
+    // Queue event through cookie consent system
+    if (typeof window.cookieConsentQueueEvent === 'function') {
+        window.cookieConsentQueueEvent(eventName, defaultParams);
+    } else if (typeof gtag === 'function') {
+        // Fallback if cookie consent system isn't loaded yet
+        gtag('event', eventName, defaultParams);
+    }
 }
 
 // Event delegation for button clicks

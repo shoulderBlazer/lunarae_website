@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="app_icon.png">
+    <link rel="stylesheet" href="cookie-consent.css">
+    <script src="cookie-consent.js"></script>
     <script src="analytics.js"></script>
     <script>
         tailwind.config = {
@@ -216,6 +218,8 @@
                     <a href="privacy.html" class="hover:text-luna-textPrimary transition">Privacy Policy</a>
                     <span>·</span>
                     <a href="terms.html" class="text-luna-textPrimary font-semibold">Terms & Conditions</a>
+                    <span>·</span>
+                    <button onclick="window.openCookieSettings()" class="hover:text-luna-textPrimary transition cursor-pointer">Cookie Settings</button>
                 </div>
                 <p class="text-sm text-luna-textSecondary">© 2025 LunaRae. All rights reserved.</p>
             </div>
