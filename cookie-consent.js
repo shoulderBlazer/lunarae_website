@@ -276,7 +276,7 @@
                 <div class="cookie-text">
                     <div class="cookie-title">We value your privacy</div>
                     <div class="cookie-message">
-                        We use cookies to improve your experience and to understand how our website is used. With your permission, we use Google Analytics to collect anonymous information about website usage. You can accept or reject analytics cookies at any time.
+                        We use cookies to improve your experience and help us understand how our website is used. Analytics cookies are only used with your permission. You can accept or reject them now and change your choice at any time.
                     </div>
                 </div>
                 <div class="cookie-buttons">
@@ -292,7 +292,6 @@
         const overlay = document.createElement('div');
         overlay.id = 'cookie-consent-overlay';
         overlay.className = 'cookie-consent-overlay';
-        overlay.addEventListener('click', hideBanner);
         document.body.appendChild(overlay);
         
         // Add event listeners
