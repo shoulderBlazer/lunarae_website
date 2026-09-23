@@ -10,7 +10,9 @@
     // Consent state
     let consentState = {
         analytics_storage: 'denied',
-        ad_storage: 'denied'
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
     };
     
     // Track if GA4 has been loaded
@@ -21,27 +23,33 @@
     
     // Initialize dataLayer for Google Consent Mode
     window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function() {
+        window.dataLayer.push(arguments);
+    };
+    initializeConsentMode();
     
     /**
      * Update Google Consent Mode
      * @param {Object} consent - Consent state object
      */
     function updateConsentMode(consent) {
-        const previousAnalyticsState = consentState.analytics_storage;
-        
-        consentState = { ...consentState, ...consent };
-        
-        window.dataLayer.push(function() {
-            this.setConsent(consentState);
-        });
+        // Only analytics may be granted, including when restoring older records.
+        consentState = {
+            analytics_storage: consent.analytics_storage === 'granted' ? 'granted' : 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+        };
+
+        window.gtag('consent', 'update', { ...consentState });
         
         window.dataLayer.push({
             event: 'consent_update',
             ...consentState
         });
         
-        // Clear GA cookies if analytics consent changes from granted to denied
-        if (previousAnalyticsState === 'granted' && consentState.analytics_storage === 'denied') {
+        // Also remove cookies left behind by a previously stored rejection.
+        if (consentState.analytics_storage === 'denied') {
             clearGACookies();
         }
     }
@@ -50,16 +58,12 @@
      * Load GA4 script
      */
     function loadGA4() {
-        if (ga4Loaded) return;
+        if (ga4Loaded || consentState.analytics_storage !== 'granted') return;
         
         const script = document.createElement('script');
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
         document.head.appendChild(script);
-        
-        window.gtag = function() {
-            dataLayer.push(arguments);
-        };
         
         gtag('js', new Date());
         gtag('config', GA4_MEASUREMENT_ID, {
@@ -105,9 +109,7 @@
      * Initialize Google Consent Mode with default denied consent
      */
     function initializeConsentMode() {
-        window.dataLayer.push(function() {
-            this.setConsent(consentState);
-        });
+        window.gtag('consent', 'default', { ...consentState });
     }
     
     /**
@@ -127,29 +129,37 @@
      * Removes _ga and _ga_* cookies for privacy when consent is withdrawn or expires
      */
     function clearGACookies() {
-        // Get current domain and its subdomains
+        // Cover host-only cookies, the current host, and GA's production parent domain.
         const hostname = window.location.hostname;
-        const domains = [hostname, `.${hostname}`];
-        
-        // Handle localhost for testing
-        if (hostname === 'localhost' || hostname === '127.0.0.1') {
-            domains.push('localhost', '127.0.0.1');
+        const domains = new Set(['', hostname, `.${hostname}`]);
+        if (hostname === 'lunarae.app' || hostname.endsWith('.lunarae.app')) {
+            domains.add('lunarae.app');
+            domains.add('.lunarae.app');
         }
-        
-        // Clear _ga cookie
-        domains.forEach(domain => {
-            document.cookie = `_ga=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+
+        // Match root and current-path scopes, including ancestor directories.
+        const paths = new Set(['/']);
+        const segments = window.location.pathname.split('/').filter(Boolean);
+        let currentPath = '';
+        segments.forEach(segment => {
+            currentPath += `/${segment}`;
+            paths.add(currentPath);
+            paths.add(`${currentPath}/`);
         });
-        
-        // Clear _ga_* cookies (all GA4 cookies starting with _ga_)
-        const cookies = document.cookie.split(';');
-        cookies.forEach(cookie => {
-            const cookieName = cookie.split('=')[0].trim();
-            if (cookieName.startsWith('_ga_')) {
-                domains.forEach(domain => {
-                    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+
+        // Snapshot names before deleting: duplicate names can exist in several scopes.
+        const cookieNames = new Set(['_ga', `_ga_${GA4_MEASUREMENT_ID.slice(2)}`]);
+        document.cookie.split(';').forEach(cookie => {
+            const name = cookie.split('=')[0].trim();
+            if (name.startsWith('_ga_')) cookieNames.add(name);
+        });
+        cookieNames.forEach(name => {
+            domains.forEach(domain => {
+                paths.forEach(cookiePath => {
+                    const domainAttribute = domain ? `; domain=${domain}` : '';
+                    document.cookie = `${name}=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${cookiePath}${domainAttribute}`;
                 });
-            }
+            });
         });
     }
     
@@ -208,7 +218,7 @@
         };
         
         updateConsentMode(newConsent);
-        saveConsent(newConsent);
+        saveConsent(consentState);
         loadGA4();
         hideBanner();
     }
@@ -223,9 +233,7 @@
         };
         
         updateConsentMode(newConsent);
-        saveConsent(newConsent);
-        // Clear GA cookies for privacy when user rejects
-        clearGACookies();
+        saveConsent(consentState);
         hideBanner();
     }
     
@@ -303,9 +311,6 @@
      * Initialize cookie consent
      */
     function init() {
-        // Initialize Consent Mode with default denied
-        initializeConsentMode();
-        
         // Check for saved consent (includes expiry check)
         const savedConsent = loadConsent();
         

@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://www.lunarae.app/sitemap.xml

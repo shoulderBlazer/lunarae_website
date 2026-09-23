@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunaRae: Bedtime Stories | Personalised Bedtime Stories</title>
+    <meta name="description" content="Create gentle, personalised bedtime stories from your ideas with LunaRae: Bedtime Stories, designed for parents and children to enjoy together.">
+    <link rel="canonical" href="https://www.lunarae.app/bedtime-stories.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LunaRae">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="LunaRae: Bedtime Stories | Personalised Bedtime Stories">
+    <meta property="og:description" content="Create gentle, personalised bedtime stories from your ideas with LunaRae: Bedtime Stories, designed for parents and children to enjoy together.">
+    <meta property="og:url" content="https://www.lunarae.app/bedtime-stories.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="LunaRae: Bedtime Stories | Personalised Bedtime Stories">
+    <meta name="twitter:description" content="Create gentle, personalised bedtime stories from your ideas with LunaRae: Bedtime Stories, designed for parents and children to enjoy together.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/app_icon.png">
+    <link rel="stylesheet" href="cookie-consent.css">
+    <script src="cookie-consent.js"></script>
+    <script src="analytics.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luna: {
+                            gradientStart: '#F6F4FF',
+                            gradientEnd: '#EAE4FF',
+                            primary: '#B9A8E5',
+                            secondary: '#FFD6C9',
+                            card: '#FFFFFF',
+                            textPrimary: '#2A2A2A',
+                            textSecondary: '#6B6B6B',
+                            inputBg: '#FFFBF5',
+                        }
+                    },
+                    fontFamily: {
+                        'quicksand': ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 60px rgba(185, 168, 229, 0.3);
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        /* Phone Frame */
+        .phone-frame {
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .phone-screen {
+            background: #1A1A2E;
+            border-radius: 30px;
+            overflow: hidden;
+            aspect-ratio: 9/19.5;
+        }
+        .phone-notch {
+            width: 120px;
+            height: 28px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            margin: 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" href="brand.css">
+</head>
+<body class="brand-page bedtime-page min-h-screen text-luna-textPrimary overflow-x-hidden">
+    <!-- Stars Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="star w-1 h-1" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 15%; left: 80%; animation-delay: 0.5s;"></div>
+        <div class="star w-1 h-1" style="top: 30%; left: 10%; animation-delay: 1s;"></div>
+        <div class="star w-2 h-2" style="top: 25%; left: 90%; animation-delay: 1.5s;"></div>
+        <div class="star w-1 h-1" style="top: 50%; left: 5%; animation-delay: 2s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 60%; left: 95%; animation-delay: 2.5s;"></div>
+        <div class="star w-1 h-1" style="top: 70%; left: 15%; animation-delay: 0.3s;"></div>
+        <div class="star w-1 h-1" style="top: 80%; left: 85%; animation-delay: 0.8s;"></div>
+        <div class="star w-1.5 h-1.5" style="top: 90%; left: 25%; animation-delay: 1.3s;"></div>
+        <div class="star w-1 h-1" style="top: 5%; left: 50%; animation-delay: 1.8s;"></div>
+        <div class="star w-2 h-2" style="top: 45%; left: 75%; animation-delay: 2.3s;"></div>
+        <div class="star w-1 h-1" style="top: 35%; left: 35%; animation-delay: 0.7s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Main navigation"><div class="site-nav-inner">
+        <a class="site-brand" href="index.html">LunaRae</a>
+        <div class="site-nav-links"><a href="index.html">Home</a><a href="bedtime-stories.html" aria-current="page">Bedtime Stories</a><a href="thriller-stories.html">Thriller Stories</a></div>
+    </div></nav>
+
+    <main class="shell">
+        <header class="bedtime-hero">
+            <div class="bedtime-hero-copy">
+                <img class="bedtime-hero-logo" src="images/app_icon.png" alt="" width="88" height="88">
+                <h1><span>Magical</span> Bedtime Stories,<br>Created Just for <span>Your Child</span></h1>
+                <p class="intro">LunaRae uses AI to craft gentle, personalized bedtime stories that spark imagination and bring sweet dreams.</p>
+                <div class="bedtime-store-buttons">
+                    <a href="https://apps.apple.com/app/lunarae/id6756271759" data-ga-event="app_store_click" data-ga-button-text="Download on the App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="48"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.lunarae.mobile" data-ga-event="google_play_click" data-ga-button-text="GET IT ON Google Play"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="GET IT ON Google Play" height="48"></a>
+                </div>
+            </div>
+            <div class="bedtime-phone-panel" aria-label="Bedtime Stories app preview">
+                <div class="phone-frame w-64 sm:w-72 float glow">
+                    <div class="phone-screen relative">
+                        <div class="phone-notch"></div>
+                        <div class="p-4 h-full flex flex-col items-center justify-center bg-gradient-to-b from-luna-gradientStart to-luna-gradientEnd">
+                            <img src="images/lunarae_logo_1024x1024.png" alt="LunaRae Logo" class="w-32 h-32 mb-4">
+                            <p class="text-sm text-luna-textSecondary italic text-center mb-4">Create me a magical story about:</p>
+                            <div class="w-full bg-luna-inputBg rounded-2xl p-3 text-sm text-luna-textSecondary">A sleepy unicorn who can't find her stars…</div>
+                            <button class="mt-4 w-full bg-gradient-to-r from-luna-primary to-luna-primary/80 py-3 rounded-full text-sm font-semibold text-white" data-ga-event="download_button_click" data-ga-button-text="Create My Bedtime Story">Create My Bedtime Story</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="brand-section" aria-labelledby="benefits-title">
+            <div class="section-heading"><p class="eyebrow">Made for bedtime</p><h2 id="benefits-title">Why parents love LunaRae</h2></div>
+            <div class="feature-grid">
+                <article class="bedtime-panel"><h3>AI-Powered Magic</h3><p>Every story is uniquely crafted using advanced AI, ensuring fresh adventures every night.</p></article>
+                <article class="bedtime-panel"><h3>Child-Friendly Content</h3><p>Stories are gentle, positive, and designed to help children drift off to dreamland peacefully.</p></article>
+                <article class="bedtime-panel"><h3>Privacy First</h3><p>No accounts required. We minimise the information needed to provide LunaRae and encourage families not to include personal or sensitive information in story prompts.</p></article>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="brand-section" aria-labelledby="how-title">
+            <div class="section-heading"><h2 id="how-title">How it works</h2></div>
+            <ol class="feature-grid bedtime-steps">
+                <li><span class="bedtime-step-number" aria-hidden="true">01</span><h3>Enter Your Idea</h3><p>Tell us what your story should be about. A sleepy dragon? A magical forest? Anything goes!</p></li>
+                <li><span class="bedtime-step-number" aria-hidden="true">02</span><h3>AI Creates Magic</h3><p>Our AI weaves your idea into a gentle, beautifully written bedtime story.</p></li>
+                <li><span class="bedtime-step-number" aria-hidden="true">03</span><h3>Read &amp; Dream</h3><p>Enjoy the story together and watch your little one drift off to sweet dreams.</p></li>
+            </ol>
+        </section>
+
+        <section class="brand-section" aria-labelledby="plans-title">
+            <div class="section-heading"><h2 id="plans-title">Choose how you create</h2></div>
+            <div class="plan-grid">
+                <article class="bedtime-panel bedtime-plan"><h3 class="eyebrow">Dreamer / Free</h3><p class="plan-limit">2 generated stories per day</p><p>Ads included</p></article>
+                <article class="bedtime-panel bedtime-plan bedtime-weaver-plan"><h3 class="eyebrow">Story Weaver</h3><p class="plan-limit">5 generated stories per day</p><p>No ads</p></article>
+            </div>
+        </section>
+
+        <section id="download" class="download-panel bedtime-download" aria-labelledby="download-title">
+            <p class="eyebrow">Your next bedtime story awaits</p>
+            <h2 id="download-title">LunaRae: Bedtime Stories</h2>
+            <div class="bedtime-store-buttons store-buttons">
+                <a href="https://apps.apple.com/app/lunarae/id6756271759" data-ga-event="app_store_click" data-ga-button-text="Download on the App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="48"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.lunarae.mobile" data-ga-event="google_play_click" data-ga-button-text="GET IT ON Google Play"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="GET IT ON Google Play" height="48"></a>
+            </div>
+        </section>
+    </main>
+    <footer class="brand-footer shell bedtime-footer">
+        <a class="site-brand" href="index.html"><img src="images/app_icon.png" alt="" width="40" height="40">LunaRae</a>
+        <div class="footer-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><button type="button" onclick="window.openCookieSettings()">Cookie Settings</button></div>
+        <p>© 2026 LunaRae. All rights reserved.</p>
+    </footer>
+</body>
+</html>
