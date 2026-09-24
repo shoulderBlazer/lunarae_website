@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
+    <title>Support | LunaRae</title>
+    <meta name="description" content="Support for LunaRae Bedtime Stories and Thriller Stories. Choose your app to contact our support team.">
+    <link rel="canonical" href="https://www.lunarae.app/support.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LunaRae">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Support | LunaRae">
+    <meta property="og:description" content="Support for LunaRae Bedtime Stories and Thriller Stories. Contact our support team.">
+    <meta property="og:url" content="https://www.lunarae.app/support.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Support | LunaRae">
+    <meta name="twitter:description" content="Support for LunaRae Bedtime Stories and Thriller Stories. Contact our support team.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="brand.css">
+    <link rel="stylesheet" href="cookie-consent.css">
+    <link rel="stylesheet" href="support.css">
+    <script src="cookie-consent.js"></script>
+    <script src="analytics.js"></script>
+    <script src="support.js" defer></script>
+</head>
+<body class="brand-page selector-page support-page">
+<nav class="site-nav" aria-label="Main navigation"><div class="site-nav-inner">
+    <a class="site-brand" href="index.html">LunaRae</a>
+    <div class="site-nav-links"><a href="bedtime-stories.html">Bedtime Stories</a><a href="thriller-stories.html">Thriller Stories</a><a href="support.html" aria-current="page">Support</a></div>
+</div></nav>
+<main class="support-main">
+    <header class="selector-heading">
+        <h1>LunaRae</h1>
+        <p>Your stories. Your way.</p>
+    </header>
+    <section aria-labelledby="help-heading">
+        <div class="support-intro">
+            <h2 id="help-heading">How can we help?</h2>
+            <p id="app-instructions">Choose your app to open the support form.</p>
+        </div>
+        <div class="support-choices" role="group" aria-label="Choose your app" aria-describedby="app-instructions">
+            <button class="support-choice" type="button" data-app="bedtime" aria-pressed="false" aria-controls="support-panel" disabled>
+                <span class="selector-logo"><img src="images/app_icon.png" alt="" width="224" height="224"></span>
+                <span class="support-label">LunaRae: Bedtime Stories</span>
+                <span class="selection-marker" aria-hidden="true">Choose app</span>
+            </button>
+            <button class="support-choice" type="button" data-app="thriller" aria-pressed="false" aria-controls="support-panel" disabled>
+                <span class="selector-logo"><img class="selector-thriller-logo" src="images/LunaRae_Thriller_1024x1024.png" alt="" width="224" height="224"></span>
+                <span class="support-label">LunaRae: Thriller Stories</span>
+                <span class="selection-marker" aria-hidden="true">Choose app</span>
+            </button>
+        </div>
+        <p id="selection-announcement" class="visually-hidden" role="status"></p>
+        <noscript><p>JavaScript is needed to choose an app and send a support message.</p></noscript>
+    </section>
+    <section id="support-panel" class="support-panel" aria-labelledby="contact-heading" hidden>
+        <h2 id="contact-heading">Contact LunaRae Support</h2>
+        <p class="selected-app">Selected app: <strong id="selected-app-name"></strong></p>
+        <p id="submission-notice" class="support-notice">Send us your question using the form below.</p>
+        <!-- JavaScript sends JSON; form-action blocks unintended native submission. -->
+        <form id="support-form" aria-describedby="submission-notice">
+            <input id="selected-app" type="hidden" name="app" value="">
+            <div class="visually-hidden" aria-hidden="true" inert>
+                <label for="website">Website</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="support-field">
+                <label for="support-name">Name <span>(optional)</span></label>
+                <input id="support-name" name="name" type="text" autocomplete="name">
+            </div>
+            <div class="support-field">
+                <label for="support-email">Email address <span>(required)</span></label>
+                <input id="support-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="support-field">
+                <label for="support-topic">What can we help with? <span>(required)</span></label>
+                <select id="support-topic" name="topic" required>
+                    <option value="">Choose a topic</option>
+                    <option>General question</option>
+                    <option>Story generation</option>
+                    <option>Subscription or purchase</option>
+                    <option>Restore purchase</option>
+                    <option>Advertising</option>
+                    <option>Technical problem</option>
+                    <option>Privacy</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="support-field">
+                <label for="support-message">Message <span>(required)</span></label>
+                <p id="message-guidance">Please do not include passwords, payment card information or other highly sensitive information.</p>
+                <textarea id="support-message" name="message" rows="6" aria-describedby="message-guidance" required></textarea>
+            </div>
+            <button id="send-message" class="support-send" type="submit" disabled>Send Message</button>
+            <p id="submission-status" class="submission-status" role="status" tabindex="-1"></p>
+        </form>
+    </section>
+    <section id="submission-success" class="support-panel" role="status" aria-atomic="true" tabindex="-1" hidden>
+        <h2>Message sent</h2>
+        <p>Thanks for contacting LunaRae. Your message has been sent successfully. We'll get back to you as soon as we can.</p>
+        <p>Need help with something else? Select an app above to start a new support request.</p>
+    </section>
+</main>
+<footer class="selector-footer">
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <button type="button" onclick="window.openCookieSettings()">Cookie Settings</button>
+    </div>
+    <p>© 2026 LunaRae. All rights reserved.</p>
+</footer>
+</body>
+</html>

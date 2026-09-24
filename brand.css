@@ -9,8 +9,6 @@
 .site-nav-links a[aria-current] { font-weight: 700; }
 .site-download { padding: 10px 20px; border-radius: 30px; background: #B9A8E5; color: #2a2a2a; font-weight: 600; }
 .site-nav a:focus-visible, .brand-page a:focus-visible, .brand-page button:focus-visible { outline: 3px solid #8972bd; outline-offset: 5px; }
-.bedtime-page .site-nav { background: #f6f4fff2; backdrop-filter: blur(12px); }
-.bedtime-page .site-nav .site-brand { color: #34303d; }
 .bedtime-page #download { scroll-margin-top: 24px; }
 .brand-page { margin: 0; font-family: 'Quicksand', sans-serif; background: #faf9fc; color: #292630; line-height: 1.65; }
 .brand-page *, .brand-page *::before, .brand-page *::after { box-sizing: border-box; }
@@ -49,7 +47,6 @@
 .footer-links a:hover, .footer-links button:hover { text-decoration: underline; }
 .brand-footer > p { font-size: 12px; }
 .thriller-page { background: #121215; color: #f5f2f3; }
-.thriller-page .site-nav { background: #18181c; border-color: #363038; color: #eee8eb; }
 .thriller-hero { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 56px; padding: 88px 0; }
 .thriller-hero h1 { font-size: clamp(40px, 5.5vw, 66px); letter-spacing: -.05em; margin: 20px 0 26px; }
 .thriller-hero h1 span { color: #f17986; }

@@ -1,0 +1,39 @@
+/* Page-local additions to the neutral parent branding. */
+.support-main { width: min(820px, calc(100% - 48px)); margin: 0 auto; padding: 64px 0 48px; flex: 1; }
+.support-page .selector-heading { margin-bottom: 40px; }
+.support-intro { text-align: center; margin-bottom: 28px; }
+.support-intro h2 { font-size: clamp(28px, 4vw, 36px); letter-spacing: -.03em; }
+.support-intro p { margin-top: 12px; color: #625c67; }
+.support-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.support-choice { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 28px 16px 20px; border: 2px solid #c9c4cc; border-radius: 24px; background: #faf9fc; color: inherit; cursor: pointer; }
+.support-choice:hover { border-color: #77717a; }
+.support-label { font-size: 19px; font-weight: 600; }
+.selection-marker { font-size: 14px; font-weight: 700; }
+.support-choice[data-app="bedtime"][aria-pressed="true"] { border-color: #725698; background: #f0eafa; }
+.support-choice[data-app="thriller"][aria-pressed="true"] { border-color: #a33242; background: #fbf0f1; }
+.support-panel { margin-top: 40px; padding: 32px; background: #fff; border: 1px solid #dcd9e0; border-radius: 24px; }
+.support-panel h2 { font-size: clamp(25px, 4vw, 30px); letter-spacing: -.025em; }
+.support-panel .selected-app { margin-top: 16px; }
+.support-panel .support-notice { margin: 20px 0 28px; padding: 16px; border-left: 3px solid #77717a; background: #f4f2f3; }
+.support-field { margin-bottom: 24px; }
+.support-field label { display: block; margin-bottom: 8px; font-weight: 700; }
+.support-field label span { font-weight: 400; color: #625c67; }
+.support-field input, .support-field select, .support-field textarea { display: block; width: 100%; min-width: 0; min-height: 48px; padding: 12px; border: 1px solid #827b88; border-radius: 8px; background: white; color: #292630; font: inherit; font-size: 16px; }
+.support-field textarea { resize: vertical; }
+.support-field #message-guidance { margin-bottom: 10px; font-size: 14px; color: #625c67; }
+.support-send { padding: 12px 28px; min-height: 48px; border: 2px solid #34303d; border-radius: 28px; background: #34303d; color: white; font-weight: 700 !important; cursor: pointer; }
+.support-send:hover { background: #514b5c; }
+.support-page :is(button, input, select, textarea, a, [tabindex]):focus-visible { outline: 3px solid #34303d; outline-offset: 5px; }
+.submission-status:not(:empty) { margin-top: 20px; padding: 16px; background: #f4f2f3; border-radius: 8px; font-weight: 600; }
+.support-page .selector-footer { color: #625c67; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 600px) {
+    .support-main { width: calc(100% - 32px); padding-top: 40px; }
+    .support-choices { grid-template-columns: 1fr; gap: 16px; }
+    .support-choice { padding: 24px 16px 18px; gap: 14px; }
+    .support-panel { padding: 24px 18px; margin-top: 28px; }
+    .support-send { width: 100%; }
+}
+@media (forced-colors: active) {
+    .support-choice[aria-pressed="true"] { border: 4px double Highlight; }
+}
