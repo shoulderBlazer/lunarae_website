@@ -102,6 +102,7 @@
 .selector-page .selector-footer .footer-links { justify-content: center; gap: 12px 28px; }
 .selector-page .selector-footer p { margin-top: 16px; font-size: 12px; }
 @media (max-width: 600px) {
+    .bedtime-page .phone-frame, .thriller-page .thriller-phone-frame { zoom: .84; }
     .selector-page .selector-main { padding: 48px 0; }
     .selector-page .selector-heading { margin-bottom: 40px; }
     .selector-page .selector-choices { grid-template-columns: 1fr; gap: 36px; }
