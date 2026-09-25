@@ -10,6 +10,11 @@
     const sendButton = document.getElementById('send-message');
     const selectedApp = document.getElementById('selected-app');
     let sending = false;
+    let submitted = false;
+    const appPages = {
+        bedtime: 'bedtime-stories.html',
+        thriller: 'thriller-stories.html'
+    };
     const appNames = {
         bedtime: 'LunaRae: Bedtime Stories',
         thriller: 'LunaRae: Thriller Stories'
@@ -45,12 +50,15 @@
             });
             if (!response.ok) throw new Error('Submission failed');
             // The HTTP status confirms delivery; response JSON is not needed.
+            submitted = true;
             form.reset();
             selectedApp.value = '';
             choices.forEach((card) => {
-                card.setAttribute('aria-pressed', 'false');
-                card.querySelector('.selection-marker').textContent = 'Choose app';
+                card.removeAttribute('aria-pressed');
+                card.removeAttribute('aria-controls');
+                card.querySelector('.selection-marker').textContent = 'Visit app page';
             });
+            document.getElementById('app-instructions').textContent = 'Choose an app to visit its product page.';
             document.getElementById('selected-app-name').textContent = '';
             document.getElementById('selection-announcement').textContent = '';
             message.setCustomValidity('');
@@ -74,6 +82,10 @@
 
     choices.forEach((choice) => {
         choice.addEventListener('click', () => {
+            if (submitted) {
+                window.location.assign(appPages[choice.dataset.app]);
+                return;
+            }
             success.hidden = true;
             const app = choice.dataset.app;
             choices.forEach((card) => {

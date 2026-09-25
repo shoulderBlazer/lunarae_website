@@ -40,6 +40,10 @@
 .thriller-card > p, .thriller-card .product-marker { color: #d2c5c9; }
 .product-marker { min-height: 88px; margin-bottom: 28px; display: flex; align-items: center; gap: 16px; font-size: 13px; }
 .age-badge { display: inline-block; border: 1px solid #bd626d; color: #f6b5bd; padding: 8px 12px; border-radius: 10px; font-weight: 700; }
+.coming-soon-badge { display: inline-block; padding: 4px 11px; border: 1px solid #d5a3aa; border-radius: 999px; background: #f8e9ec; color: #8e2938; font-size: 11px; font-weight: 700; line-height: 1.6; letter-spacing: .1em; white-space: nowrap; }
+.thriller-page .coming-soon-badge { background: #351c23; border-color: #84414d; color: #ffb4bf; }
+.thriller-page .thriller-availability { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 20px; color: #c1b8c0; font-size: 14px; }
+.thriller-page .download-panel .coming-soon-badge { margin-bottom: 12px; }
 .brand-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: 80px; padding: 32px 0; border-top: 1px solid #dfdbe5; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 13px; }
 .footer-links a, .footer-links button { color: inherit; text-decoration: none; }
@@ -53,8 +57,10 @@
 .thriller-page .intro, .thriller-page .section-heading p, .dark-panel p, .steps p { color: #c1b8c0; }
 .thriller-hero .audience { margin: 24px 0; display: flex; align-items: center; gap: 14px; font-size: 14px; }
 .thriller-page .thriller-screenshot-panel { min-width: 0; display: flex; justify-content: center; }
-.thriller-page .thriller-phone-frame { width: min(288px, 100%); padding: 10px; border: 1px solid #474149; border-radius: 39px; background: #17171a; box-shadow: 0 20px 45px rgba(0, 0, 0, .35); }
-.thriller-page .thriller-app-screenshot { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 30px; }
+.thriller-page .thriller-phone-frame { width: min(256px, 84%); aspect-ratio: 25 / 54; padding: 10px; border-radius: 40px; background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .1); }
+.thriller-page .phone-screen { position: relative; height: 100%; border-radius: 30px; overflow: hidden; background: #121215; }
+.thriller-page .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1; width: min(120px, 100%); height: 28px; border-radius: 0 0 20px 20px; background: #1a1a1a; }
+.thriller-page .thriller-app-screenshot { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; object-position: center; }
 .brand-section { padding: 40px 0; scroll-margin-top: 24px; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .dark-panel { background: #202024; border: 1px solid #383139; border-radius: 22px; padding: 30px; }
@@ -102,7 +108,8 @@
 .selector-page .selector-footer .footer-links { justify-content: center; gap: 12px 28px; }
 .selector-page .selector-footer p { margin-top: 16px; font-size: 12px; }
 @media (max-width: 600px) {
-    .bedtime-page .phone-frame, .thriller-page .thriller-phone-frame { zoom: .84; }
+    .bedtime-page .phone-frame { zoom: .84; }
+    .thriller-page .thriller-phone-frame { width: min(215.04px, 84%); }
     .selector-page .selector-main { padding: 48px 0; }
     .selector-page .selector-heading { margin-bottom: 40px; }
     .selector-page .selector-choices { grid-template-columns: 1fr; gap: 36px; }
