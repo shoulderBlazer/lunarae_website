@@ -22,12 +22,10 @@
     <link rel="stylesheet" href="cookie-consent.css">
     <script src="cookie-consent.js"></script>
     <script src="analytics.js"></script>
+    <script src="site-components.js" defer></script>
 </head>
 <body class="brand-page legal-page">
-<nav class="site-nav" aria-label="Main navigation"><div class="site-nav-inner">
-    <a class="site-brand" href="index.html">LunaRae</a>
-    <div class="site-nav-links"><a href="bedtime-stories.html">Bedtime Stories</a><a href="thriller-stories.html">Thriller Stories</a><a href="support.html">Support</a></div>
-</div></nav>
+<nav id="site-header" class="site-nav" aria-label="Main navigation"></nav>
 <main class="legal-main">
     <header class="legal-header">
         <p class="eyebrow">LunaRae legal</p>
@@ -212,10 +210,6 @@
         </section>
     </article>
 </main>
-<footer class="brand-footer legal-footer">
-    <a class="site-brand" href="index.html">LunaRae</a>
-    <div class="footer-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html" aria-current="page">Terms &amp; Conditions</a><button type="button" onclick="window.openCookieSettings()">Cookie Settings</button></div>
-    <p>© 2026 LunaRae. All rights reserved.</p>
-</footer>
+<footer id="site-footer" class="brand-footer shell legal-footer"></footer>
 </body>
 </html>
